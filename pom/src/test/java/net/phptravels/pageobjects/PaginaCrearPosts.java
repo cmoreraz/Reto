@@ -36,8 +36,7 @@ public class PaginaCrearPosts {
 	public void crearPost( ) {
 
 		txtTitulo.sendKeys( "Automatizacion" );
-		txtURL.sendKeys( "www.test.com" );	
-		cboCategoria.click();
+		txtURL.sendKeys( "https://www.phptravels.net//blog/" );	
 		txtPalabra.sendKeys("Validar");
 		txtDescrip.sendKeys( "Validar funcionamiento al asociar categoria creada" );
 	}
