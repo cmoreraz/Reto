@@ -1,5 +1,8 @@
 package net.phptravels.pageobjects;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,10 +43,10 @@ public class PaginaCrearCategoria {
 	@FindBy( xpath = "//*[@id=\"ADD_BLOG_CAT\"]/div[2]/div/form/div[3]/button[2]" )
 	private WebElement btnAdd;
 	
-	public String nameCategoria( ) {
-		txtCategoryName.sendKeys("Finanzas");
-		return txtCategoryName.getText();
+	public void nameCategoria( ) {
+		txtCategoryName.sendKeys("TI");
 	}
+	
 	public void llenarCampos( ) {		
 		
 		txtNameVietnamese.sendKeys("A");
@@ -68,11 +71,6 @@ public class PaginaCrearCategoria {
 
 	public void setTxtCategoryName(WebElement txtCategoryName) {
 		this.txtCategoryName = txtCategoryName;
-	}
-	
-	public String categoriaCreada( ) {
-		return txtCategoryName.getText();
- 
 	}
 
 }
