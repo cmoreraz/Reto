@@ -18,6 +18,7 @@ public class CrearPosts extends BaseTestSuite {
 		Thread.sleep( 5000 );
 		paginaBlogCategorias.clicBtnAdd();
 		Thread.sleep( 5000 );
+		paginaCrearCategoria.nameCategoria();
 		paginaCrearCategoria.llenarCampos();
 		Thread.sleep( 5000 );
 		paginaAdministrador.seleccionarSubMenuPosts();
@@ -25,8 +26,7 @@ public class CrearPosts extends BaseTestSuite {
 		paginaBlogPost.clicAdd();
 		Thread.sleep( 5000 );
 		paginaCrearPost.crearPost();
-		Thread.sleep( 5000 );
-		
+		Thread.sleep( 5000 );		
 		Thread.sleep( 5000 );
 		
 		
