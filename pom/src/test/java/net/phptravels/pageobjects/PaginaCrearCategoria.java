@@ -1,14 +1,13 @@
 package net.phptravels.pageobjects;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaginaCrearCategoria {
+	
+	//Se crean los atributos
 	
 	@FindBy( name = "name" )
 	private WebElement txtCategoryName;
@@ -43,34 +42,27 @@ public class PaginaCrearCategoria {
 	@FindBy( xpath = "//*[@id=\"ADD_BLOG_CAT\"]/div[2]/div/form/div[3]/button[2]" )
 	private WebElement btnAdd;
 	
-	public void nameCategoria( ) {
-		txtCategoryName.sendKeys("TI");
-	}
-	
-	public void llenarCampos( ) {		
-		
-		txtNameVietnamese.sendKeys("A");
-		txtNameRussian.sendKeys("B");
-		txtNameArabic.sendKeys("C");
-		txtNameFarsi.sendKeys("D");
-		txtNameTurkish.sendKeys("E");
-		txtNameFrench.sendKeys("F");
-		txtNameSpanish.sendKeys("G");
-		txtNameGerman.sendKeys("H");
-		
-		btnAdd.click();
-	}
-	
+	//Constructor
 	public PaginaCrearCategoria( WebDriver driver ) {
 		PageFactory.initElements( driver, this );
 	}
-
-	public WebElement getTxtCategoryName() {
-		return txtCategoryName;
+	
+	//Metodos personalizados
+	public void nameCategoria( ) {
+		txtCategoryName.sendKeys( "TI" );
 	}
-
-	public void setTxtCategoryName(WebElement txtCategoryName) {
-		this.txtCategoryName = txtCategoryName;
+	
+	public void llenarCampos( ) {			
+		txtNameVietnamese.sendKeys( "A" );
+		txtNameRussian.sendKeys( "B" );
+		txtNameArabic.sendKeys( "C" );
+		txtNameFarsi.sendKeys( "D" );
+		txtNameTurkish.sendKeys( "E" );
+		txtNameFrench.sendKeys( "F" );
+		txtNameSpanish.sendKeys( "G" );
+		txtNameGerman.sendKeys( "H" );
+		
+		btnAdd.click();
 	}
 
 }
