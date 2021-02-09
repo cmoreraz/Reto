@@ -10,8 +10,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaginaCrearPosts {
+	
+	//Se crean los atributos
 
-	WebDriver driver;
+	public WebDriver driver;
 
 	@FindBy( name = "title" )
 	private WebElement txtTitulo;
@@ -33,20 +35,27 @@ public class PaginaCrearPosts {
 
 	@FindBy( xpath = "//*[@id=\"content\"]/form/div[1]/div/div[2]/button" )
 	private WebElement btnGuardar;
+	
+	//Constructor
+	public PaginaCrearPosts( WebDriver driver ) {
+		PageFactory.initElements( driver, this );
+	}
 
+	//Metodos personalizados
 	public void crearPost( ) {
 
 		txtTitulo.sendKeys( "Automatizacion" );
 		txtURL.sendKeys( "https://www.phptravels.net//blog/" );	
-		txtURL.sendKeys(Keys.TAB, Keys.DIVIDE);
+		txtURL.sendKeys(Keys.TAB, "Esto es una prueba");
 		txtPalabra.sendKeys("Validar");
 		txtDescrip.sendKeys( "Validar funcionamiento al asociar categoria creada" );
 	}
 
+	//Metodo para recorrer la lista de categorias
 	public int numCategoriaCreada( ) {		
-		String lista = cboCategoria.getText();
-		
+				
 		List<WebElement> l = cboCategoria.findElements(By.tagName("option"));
+		
 		int i = 0;
 		if (l != null) {
 			for (i = 0; i < l.size(); i++) {
@@ -57,10 +66,6 @@ public class PaginaCrearPosts {
 
 	public void btnGuardar( ) {
 		btnGuardar.click();
-	}
-
-	public PaginaCrearPosts( WebDriver driver ) {
-		PageFactory.initElements( driver, this );
 	}
 
 }
