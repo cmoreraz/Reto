@@ -22,18 +22,21 @@ import net.phptravels.pageobjects.PaginaLogin;
  */
 
 public class BaseTestSuite {
-	
+
+	//Se crean los atributos
+
 	protected WebDriver googleDriver;
-	
+
 	protected PaginaLogin paginaLogin;
 	protected PaginaAdministrador 	paginaAdministrador;
 	protected PaginaBlogCategorias 	paginaBlogCategorias;
 	protected PaginaCrearCategoria 	paginaCrearCategoria;
 	protected PaginaBlogPosts		paginaBlogPost;
 	protected PaginaCrearPosts		paginaCrearPost;
-	
-	public void inicializarPaginas( WebDriver driver ) {
-		
+
+	//Metodos personalizados
+	public void inicializarPaginas( ) {
+
 		paginaLogin 			= new PaginaLogin( googleDriver );
 		paginaAdministrador 	= new PaginaAdministrador( googleDriver );
 		paginaBlogCategorias 	= new PaginaBlogCategorias( googleDriver );
@@ -41,20 +44,20 @@ public class BaseTestSuite {
 		paginaBlogPost			= new PaginaBlogPosts( googleDriver );
 		paginaCrearPost			= new PaginaCrearPosts( googleDriver );
 	}
-	
+
 	@Before
 	public void abrirNavegador( ) {
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\webdriver\\chromedriver.exe");
-		
+
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
 
 		googleDriver = new ChromeDriver(options);
 		googleDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
-		inicializarPaginas( googleDriver );
+
+		inicializarPaginas( );
 	}
-	
+
 	@After
 	public void cerrarNavegador( ) {
 		googleDriver.quit();
