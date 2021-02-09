@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PaginaAdministrador {
 	
+	//Se crean los atributos
+	
 	@FindBy( partialLinkText = "BLOG" )
 	private WebElement btnBlog;
 	
@@ -22,6 +24,12 @@ public class PaginaAdministrador {
 	@FindBy( xpath = "//*[@id=\"Blog\"]/li[1]/a" )
 	private WebElement btnBlogPosts;
 	
+	//Constructor
+	public PaginaAdministrador( WebDriver driver ) {
+		PageFactory.initElements( driver, this );
+	}
+	
+	//Metodos personalizados
 	public void seleccionarMenu( ) {
 		btnBlog.click();		
 	}
@@ -34,10 +42,6 @@ public class PaginaAdministrador {
 	public void seleccionarSubMenuPosts( ) {
 		btnBlog.click();
 		btnBlogPosts.click();		
-	}
-	
-	public PaginaAdministrador( WebDriver driver ) {
-		PageFactory.initElements( driver, this );
 	}
 
 }
