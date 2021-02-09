@@ -13,6 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PaginaLogin {
 	
+	//Se crean los atributos
+	
 	@FindBy( name = "email" )
 	private WebElement txtCorreo;
 	
@@ -22,14 +24,16 @@ public class PaginaLogin {
 	@FindBy( xpath = "/html/body/div[2]/form[1]/button" )
 	private WebElement btnIngresar;
 	
+	//Constructor
+	public PaginaLogin( WebDriver driver ) {
+		PageFactory.initElements( driver, this );
+	}
+	
+	//Metodos personalizados
 	public void iniciarSesion( ) {
 		txtCorreo.sendKeys("admin@phptravels.com");
 		txtContrasena.sendKeys("demoadmin");
 		btnIngresar.click();
-	}
-	
-	public PaginaLogin( WebDriver driver ) {
-		PageFactory.initElements( driver, this );
 	}
 
 }
