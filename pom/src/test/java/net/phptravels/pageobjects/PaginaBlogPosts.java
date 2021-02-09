@@ -7,15 +7,20 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PaginaBlogPosts {
 
-	
+	//Se crean los atributos
+
 	@FindBy( xpath = "//*[@id=\"content\"]/div[2]/form/button" )
 	private WebElement btnAdd;
-	
-	public void clicAdd( ) {
-		btnAdd.click();
-	}
-	
+
+	//Constructor
 	public PaginaBlogPosts( WebDriver driver ) {
 		PageFactory.initElements( driver, this );
 	}
+
+	//Metodos personalizados
+	public void clicAdd( ) {
+		btnAdd.click();
+	}
+
+
 }
