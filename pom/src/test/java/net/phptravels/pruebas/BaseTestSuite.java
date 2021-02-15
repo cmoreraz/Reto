@@ -56,6 +56,8 @@ public class BaseTestSuite {
 		googleDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		inicializarPaginas( );
+		
+		googleDriver.get( "https://www.phptravels.net/admin" );		
 	}
 
 	@After

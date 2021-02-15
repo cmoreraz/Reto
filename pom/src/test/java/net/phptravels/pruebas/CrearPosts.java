@@ -9,10 +9,9 @@ public class CrearPosts extends BaseTestSuite {
 	 * 
 	 * @throws InterruptedException se puede presentar una excepcion en tiempo de ejecucion
 	 */
+	
 	@Test
 	public void login( ) throws InterruptedException {
-
-		googleDriver.get( "https://www.phptravels.net/admin" );
 
 		paginaLogin.iniciarSesion();
 		paginaAdministrador.seleccionarMenu();
