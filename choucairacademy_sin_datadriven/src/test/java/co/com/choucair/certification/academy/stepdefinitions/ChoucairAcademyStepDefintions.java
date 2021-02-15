@@ -23,17 +23,17 @@ public class ChoucairAcademyStepDefintions {
     }
 
     @Given("than brandon wants to learn automation at the academy Choucair")
-    public void than_brandon_wants_to_learn_automation_at_the_academy_Choucair() {
+    public void than_brandon_wants_to_learn_automation_at_the_academy_Choucair() throws Exception {
         OnStage.theActorCalled("Brandon").wasAbleTo(OpenUp.thePage(),(Login.onThePage()));
     }
 
     @When("he search for the course on the choucair academy platform")
-    public void he_search_for_the_course_on_the_choucair_academy_platform(String course) {
+    public void he_search_for_the_course_on_the_choucair_academy_platform(String course) throws Exception {
         OnStage.theActorInTheSpotlight().attemptsTo(Search.the(course));
     }
 
     @Then("he finds the course called")
-    public void he_finds_the_course_called(String question) {
+    public void he_finds_the_course_called(String question) throws Exception {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
     }
 
